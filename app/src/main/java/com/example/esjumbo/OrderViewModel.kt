@@ -1,6 +1,7 @@
 package com.example.esjumbo
 
 import androidx.lifecycle.ViewModel
+import com.example.esjumbo.data.FormState
 import com.example.esjumbo.data.OrderUIState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -12,7 +13,9 @@ private const val HARGA_PER_CUP = 3000
 
 class OrderViewModel : ViewModel() {
     private val _stateUI = MutableStateFlow(OrderUIState())
+    private val _namaSTATE = MutableStateFlow(FormState())
     val stateUI: StateFlow<OrderUIState> = _stateUI.asStateFlow()
+    val namaST: StateFlow<FormState> = _namaSTATE.asStateFlow()
 
     fun setJumlah(jmlEsJumbo:Int){
         _stateUI.update { stateSaatIni ->
