@@ -42,9 +42,7 @@ class OrderViewModel : ViewModel() {
         _stateUI.value = OrderUIState()
     }
 
-    private fun hitungHarga(
-        jumlah: Int = _stateUI.value.jumlah,
-    ): String {
+    private fun hitungHarga(jumlah: Int = _stateUI.value.jumlah, ): String {
         val kalkulasiHarga = jumlah * HARGA_PER_CUP
 
         return NumberFormat.getNumberInstance().format(kalkulasiHarga)

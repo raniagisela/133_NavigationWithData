@@ -32,13 +32,16 @@ import com.example.esjumbo.ui.theme.theme.EsJumboTheme
 fun HalamanHome (
     onNextButtonClicked: () -> Unit){
     val image = painterResource(id = R.drawable.esteh2)
-    Column (modifier = Modifier,
-        verticalArrangement = Arrangement.SpaceBetween){
+    Column (
+        modifier = Modifier,
+        verticalArrangement = Arrangement.SpaceBetween
+    ){
         OutlinedCard(
             colors = CardDefaults.cardColors(
                 containerColor = MaterialTheme.colorScheme.surface,
             ),
-            border = BorderStroke(1.dp, Color.Black), modifier = Modifier
+            border = BorderStroke(1.dp, Color.Black),
+            modifier = Modifier
                 .fillMaxWidth(0.95f)
                 .padding(vertical = 50.dp)
                 .align(Alignment.CenterHorizontally)
@@ -89,7 +92,7 @@ fun HalamanHome (
 
 @Preview(showBackground = true)
 @Composable
-fun PreviewHalamanHome() {
+fun prev() {
     EsJumboTheme {
         HalamanHome {}
         }
