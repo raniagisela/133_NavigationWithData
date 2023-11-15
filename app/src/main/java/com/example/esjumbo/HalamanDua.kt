@@ -89,3 +89,12 @@ fun HalamanDua (
         }
     }
 }
+
+@Preview(showBackground = true)
+@Composable
+fun show2() {
+    HalamanDua(
+        orderUiState = OrderUIState(),
+        formState = FormState(),
+        onCancelButtonClicked = { /*TODO*/ })
+}
