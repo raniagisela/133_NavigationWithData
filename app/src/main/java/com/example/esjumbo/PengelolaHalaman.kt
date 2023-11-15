@@ -30,6 +30,7 @@ import com.example.esjumbo.data.SumberData
 enum class PengelolaHalaman {
     Home,
     Rasa,
+    Form,
     Summary
 }
 
@@ -74,6 +75,7 @@ fun EsJumboApp(
         }
     ) { innerPadding ->
         val uiState by viewModel.stateUI.collectAsState()
+        val namaState by viewModel.namaST.collectAsState()
         NavHost(
             navController = navController,
             startDestination = PengelolaHalaman.Home.name,
@@ -84,6 +86,13 @@ fun EsJumboApp(
                     navController.navigate(PengelolaHalaman.Rasa.name)
                 }
                 )
+            }
+            composable(route = PengelolaHalaman.Form.name){
+                HalamanForm(
+                    onSubmitButtonClicked = {
+                        viewModel.setNama(it)
+                        navController.navigate(PengelolaHalaman.Rasa.name)},
+                    onBackButtonClicked = {navController.popBackStack()})
             }
             composable(route = PengelolaHalaman.Rasa.name) {
                 val context = LocalContext.current
@@ -102,6 +111,7 @@ fun EsJumboApp(
             composable(route = PengelolaHalaman.Summary.name) {
                 HalamanDua(
                     orderUiState = uiState,
+                    formState = namaState,
                     onCancelButtonClicked = { cancelOrderAndNavigateToRasa(navController) })
             }
         }
