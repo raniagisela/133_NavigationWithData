@@ -20,7 +20,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.esjumbo.data.OrderUIState
 import com.example.esjumbo.ui.theme.komponen.FormatLabelHarga
-import java.io.StringReader
 
 @Composable
 fun HalamanDua (

@@ -27,7 +27,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.esjumbo.ui.theme.theme.EsJumboTheme
-import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 @Composable
 fun HalamanHome (
@@ -92,6 +91,6 @@ fun HalamanHome (
 @Composable
 fun PreviewHalamanHome() {
     EsJumboTheme {
-        HalamanHome (onNextButtonClicked = {})
+        HalamanHome {}
         }
     }
